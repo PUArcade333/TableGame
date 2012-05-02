@@ -4,18 +4,18 @@ package your.packname;
 
 public class GameState {
     Board board;
-    int[] numKicks;
-    boolean kickmove; 
+    int[] numKicks; //number of kick/capture moves used by each player
+    boolean kickmove; //is this move of type kick/capture (same thing)
     int choice1;
     int choice2;
     int playerturn;
     boolean used[][];
-    int nUnused;
-    int nUsed;
+    int nUnused; //number of "used" tiles selected so far this turn
+    int nUsed; //number of "unused" tiles selected so far this turn
     int lastUsed;
-    int lastPair[];
+    int lastPair[]; //last pair of tiles swapped, cannot be swapped till diff pair swapped
     int numTurns;
-    boolean selected[];
+    boolean selected[]; //what tiles are selected
     
     public GameState() {
         board = new Board();

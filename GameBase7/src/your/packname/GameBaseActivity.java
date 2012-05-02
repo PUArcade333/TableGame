@@ -52,17 +52,18 @@ public class GameBaseActivity extends Activity {
         });
     }
     
+    //handles what to do when the DONE! button is clicked
     public void onButtonClicked(View v) {
         
-    	System.out.println(g.string());
+    	//System.out.println(g.string());
     	
     	if(g.board.isGameOver()) {
-    		
-    		//doesnt handle if you make the other guy win
+    		//does it handle if you make the other guy win?
 			Toast.makeText(GameBaseActivity.this, g.board.winner() + " is the winner" ,Toast.LENGTH_SHORT).show();
 			return;
 		}
     	
+    	//if its not your turn, read from socket to see if a state has been sent from other player
     	if(!isYourTurn) {
     		Toast.makeText(GameBaseActivity.this, "its not your turn" ,Toast.LENGTH_SHORT).show();
     		if(isServer){
@@ -82,8 +83,7 @@ public class GameBaseActivity extends Activity {
     				Toast.makeText(GameBaseActivity.this, "Now it is" ,Toast.LENGTH_SHORT).show();
     				isYourTurn = true;
     			}
-    		}
-    			
+    		} //if state has been sent from other player, draw updated board and allow this player to move	
     		if(isYourTurn) {
     			GridView gridview = (GridView) findViewById(R.id.gridview);
     	    	for(int i = 0; i < 16; i++) {
@@ -103,7 +103,7 @@ public class GameBaseActivity extends Activity {
 		int choiceA = -1;
 		int choiceB = -1;
 		int validMove = 0;
-		
+		//checks to see what spots have been chosen 
 		if(g.choice1 != -1) choiceA = g.choice1;
 		else if(g.choice2 != -1) choiceA = g.choice2;
 		else Toast.makeText(GameBaseActivity.this, "pick something" ,Toast.LENGTH_SHORT).show();
@@ -153,6 +153,7 @@ public class GameBaseActivity extends Activity {
 		}
 		
 		//System.out.println(g.getString());
+		//sends state to other player, locks board from submitting moves 
 		if(netOn) {
 			if(isServer) {
 				connect.sendMsgFromServer(g.string());
@@ -164,7 +165,7 @@ public class GameBaseActivity extends Activity {
 			}
 		}
 		
-		//doesnt handle if you make the other guy win
+		//does it handle if you make the other guy win?
 		if(g.board.isGameOver()) Toast.makeText(GameBaseActivity.this, g.board.winner() + " is the winner" ,Toast.LENGTH_SHORT).show();
 		
     }
@@ -173,6 +174,7 @@ public class GameBaseActivity extends Activity {
 		return ((a == g.lastPair[0] || a == g.lastPair[1]) && (b == g.lastPair[0] || b == g.lastPair[1]));
     }
     
+    //handles set up if you want this player to be a client
     public void onButtonClickeda(View v) {
     	Toast.makeText(GameBaseActivity.this, "a pressed", Toast.LENGTH_SHORT).show();
     	if(!netStatePicked) {
@@ -202,6 +204,7 @@ public class GameBaseActivity extends Activity {
     	
     }
     
+    //handles setup if you want this player to be a client 
     public void onButtonClickedb(View v) {
     	Toast.makeText(GameBaseActivity.this, "b pressed", Toast.LENGTH_SHORT).show();
     	if(!netStatePicked) {
@@ -230,6 +233,7 @@ public class GameBaseActivity extends Activity {
     	
     }
     
+    //handles if you don't want net connectivity for htis game 
     public void onButtonClickedc(View v) {
     	netStatePicked = true;
     	ip = "no net";
