@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/welcometxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcometxt"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/registerstatustxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registerstatus"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/netidlabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/netidlabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />	
+	    <EditText
+	        android:id="@+id/netidEntry"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:inputType="text" >
+	
+	        <requestFocus />
+	    </EditText>
+	</LinearLayout>	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/passwordLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/passlabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+    	<EditText
+	        android:id="@+id/passwordEntry"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:inputType="textPassword" />
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/confirmpassword"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/confirmLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/confirmlabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+    	<EditText
+	        android:id="@+id/confirmEntry"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:inputType="textPassword" />
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/email"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/emailLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:text="@string/emaillabel"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+    	<EditText
+	        android:id="@+id/emailEntry"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:inputType="text" />
+	</LinearLayout>
+    <Button
+        android:id="@+id/goRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="doRegister"
+        android:text="@string/registerlabel" />
+    <Button
+        android:id="@+id/back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="backtologin"
+        android:text="Back" />
+
+    
+
+</LinearLayout>

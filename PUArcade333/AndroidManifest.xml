@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.link"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="Princeton Arcade" >
+        <activity
+            android:name=".HelloAndroid"
+            android:label="Princeton Arcade" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Linker"
+            android:label="Singleplayer Game Select" >
+            <intent-filter>
+                <action android:name=".Linker" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HighScores"
+            android:label="High Scores" >
+            <intent-filter>
+                <action android:name=".HighScores" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.squirrel.SquirrelMain"
+            android:label="Squirrel Chase" >
+            <intent-filter>
+                <action android:name=".SquirrelMain" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.snake.Snake"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="Snake">
+            <intent-filter>
+                <action android:name=".Snake" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="puArcade.princetonTD.main.PrincetonTD"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name=".PrincetonTD" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="puArcade.princetonTD.main.GameInstructions"></activity><activity
+            android:name="puArcade.princetonTD.main.GameSoloActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name=".PrincetonTD" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.connectfour.ConnectFourMainServer"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name=".ConnectFourServer" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.connectfour.ConnectFourMainClient"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name=".ConnectFourClient" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.link.MultiplayerLinker"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name=".Multi" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="GetScores0Activity"></activity>
+        <activity android:name="GetScores1Activity"></activity>
+        <activity android:name="GetScores2Activity"></activity>
+        <activity android:name="GetScores3Activity"></activity>
+        <activity android:name="GetScores4Activity"></activity>
+        <activity android:name="com.Tabletop.GameBaseActivity"></activity>
+        
+    </application>
+</manifest>
